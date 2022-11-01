@@ -1,0 +1,31 @@
+--Check out my store database here!
+
+CREATE TABLE clothingstore (id INTEGER PRIMARY KEY, Item TEXT, sizevariety TEXT, colorvariety INTEGER, PRICE$ INTEGER, StarRating INTEGER);
+
+INSERT INTO clothingstore VALUES (1, "Long Party Dress","S-XL","dustypink,white,beige",35,5);
+INSERT INTO clothingstore VALUES (2, "Midi Party Dress","S-XXL","dustypink,winered,beige",30,4.5);
+INSERT INTO clothingstore VALUES (3, "Modest Celebration Dress","S-XXL","dustypink,white,green,beige",50,5);
+INSERT INTO clothingstore VALUES (4, "Long Beach Dress","S-XXL","dustypink,white,green,beige, yellow, brightred",45,5);
+INSERT INTO clothingstore VALUES (5, "Short Party Dress","S-XL","dustypink,white,beige,navyblue,black",30,4);
+INSERT INTO clothingstore VALUES (6, "Beach Cover Up","S-XXL","dustypink,white,purple,beige",20,4.5);
+INSERT INTO clothingstore VALUES (7, "FLoral Offshoulder Dress","S-XXXL","dustypink,white,red,silver,beige",40,5);
+INSERT INTO clothingstore VALUES (8, "Bold Offshoulder Dress","S-XXXL","dustypink,white,green,purple,beige,winered",43,4.5);
+INSERT INTO clothingstore VALUES (9, "Overall Floral","S-XL","black,dustypink,white,gray,lightpurple,beige",40,4.9);
+INSERT INTO clothingstore VALUES (10, "Casual Pokadots Dress","S-XXL","blue,yellow,silver,dustypink,white,beige",30,4.75);
+INSERT INTO clothingstore VALUES (11, "Casual bow dress","S-XXXL","navyblue,green,orange,yellow,dustypink,white,beige",30,4.85);
+INSERT INTO clothingstore VALUES (12, "Aesthetic Teaparty Dress","S-XL","dustypink,white,beige",34,5);
+INSERT INTO clothingstore VALUES (13, "Sequins Night Dress","S-XL","gold,dustypink,white,beige,black,silver",105,5);
+INSERT INTO clothingstore VALUES (14, " Sequins Wedding Dress","S-XXL","white,ivory",320,4.9);
+INSERT INTO clothingstore VALUES (15, "Modest Wedding Dress","S-XXL","dustypink,white,ivory",235,4.5);
+
+--display the database ordered by price.
+SELECT*FROM clothingstore ORDER BY price$ desc;
+
+--what is the avg price of items in the 5-star-rated section? 
+SELECT avg(price$) FROM clothingstore WHERE starrating=5;
+
+---which types of clothings have largest sizes, limit to 5?
+SELECT item, price$, sizevariety
+FROM clothingstore
+order by sizevariety desc
+limit 5; 
